@@ -1,0 +1,18 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/
+hooks:
+  BeforeInstall:
+    - location: /a1.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: /a2.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: /a3.sh
+      timeout: 300
+      runas: root
